@@ -1,0 +1,37 @@
+.p-button.p-button-sm {
+  font-size: 0.875rem !important;
+  padding: 0px 20px 0px 20px !important;
+}
+
+.loginBtn{
+  align-items: center;
+  border: 1px solid #275df5;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  outline: none;
+  padding: 5px 20px;
+  text-decoration: none;
+  background: #ffff;
+  color: #275df5;
+}
+
+.loginBtn:hover{
+  color: #275df5;
+}
+
+.userName{
+  text-transform: uppercase;
+  background-color: #fff;
+  box-shadow: 0px 6px 12px rgba(30, 10, 58, 0.04);
+  border: none;
+}
+
+.userName::before{
+ content: '\f007 ';
+ font-family: 'fontAwesome';
+ margin-right: 5px;
+ color: #1a3170;
+}

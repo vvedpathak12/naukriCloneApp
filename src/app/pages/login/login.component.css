@@ -1,0 +1,178 @@
+.static-list img {
+  width: 144px;
+  height: 144px;
+}
+
+ul li {
+  font-size: 14px;
+  list-style: none;
+  color: #474D6A;
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+
+ul li::before {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  color: #4A90E2;
+  border-radius: 50%;
+  font-size: 15px;
+  padding: 3px;
+  margin-right: 5px;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+input,
+textarea,
+.form-select {
+  border-color: #dcdee9;
+  padding: 9px;
+  border-radius: 0px
+}
+
+input::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2 !important;
+}
+
+select {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2;
+}
+
+select option {
+  font-size: 14px;
+  color: rgb(65, 64, 64) !important;
+}
+
+textarea::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2;
+}
+
+.loginFormCard {
+  box-shadow: 0px 6px 12px rgba(30, 10, 58, 0.04);
+  padding: 18px 70px;
+  margin-top: 10px;
+}
+
+.p-button {
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+}
+
+.p-buttonSelected {
+  background-color: #47B749;
+  color: #ffff;
+}
+
+.regBtn {
+  cursor: pointer;
+  border-radius: 0px;
+  border-color: #4A90E2;
+  padding: 8px 50px;
+  color: #3d8eea;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 18px;
+  margin-bottom: 170px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.OTP {
+  color: #4A90E2;
+  cursor: pointer;
+}
+
+.horizontal-line {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.horizontal-line::before,
+.horizontal-line::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #ccc;
+  margin: 7px 8px 0px 8px;
+}
+
+.horizontal-line span {
+  color: #928989d9;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.google-signin {
+  display: flex;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0px 1px 1px rgba(59, 39, 58, 0.2);
+}
+
+.google-logo img {
+  width: 24px;
+  height: 24px;
+  margin-right: 60px;
+}
+
+.signin-button {
+  background: transparent;
+  border: none;
+  color: #827e7e;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+.card {
+  box-shadow: 0px 9px 15px rgba(83, 169, 220, 0.3);
+}
+
+.infoImg {
+  background-image: url('src/assets/images/register.png');
+  background-position: right bottom;
+  background-size: 14rem 10rem;
+  /* Set the size of the background image as needed */
+  background-repeat: no-repeat;
+  padding-right: 70px;
+  /* Adjust padding to ensure the image does not overlap content */
+}
+
+
+/* Responsive css */
+
+@media(max-width: 575.98px) {
+  .loginFormCard {
+    padding: 18px 10px;
+    margin-top: 10px;
+  }
+
+  .google-logo img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+  }
+}

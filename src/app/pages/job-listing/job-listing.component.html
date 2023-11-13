@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <p-table [value]="jobArr" [paginator]="true" [rows]="10"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[10,25,50,75,100,150]" styleClass="p-datatable-gridlines p-datatable-sm"
+        [responsive]="true" [globalFilterFields]="['foodCategoryName']">
+        <ng-template pTemplate="header">
+          <tr class="button-cell">
+            <th>Sr</th>
+            <th pSortableColumn="jobName">Job Name <p-sortIcon field="jobName"></p-sortIcon></th>
+            <th pSortableColumn="package">Package <p-sortIcon field="package"></p-sortIcon></th>
+            <th pSortableColumn="experience">Experience <p-sortIcon field="experience"></p-sortIcon></th>
+            <th pSortableColumn="location">Location <p-sortIcon field="location"></p-sortIcon></th>
+            <th pSortableColumn="categoryName">Category <p-sortIcon field="categoryName"></p-sortIcon></th>
+            <th>Action</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item let-sr="rowIndex">
+          <tr class="button-cell">
+            <td>{{sr+1}}</td>
+            <td>{{item.jobName}}</td>
+            <td>{{item.package}}</td>
+            <td>{{item.experience}}</td>
+            <td>{{item.location}}</td>
+            <td>{{item.categoryName}}</td>
+            <td>
+              <button class="btn btn-success btn-sm">Open</button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="7" class="text-center">No Record Found</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

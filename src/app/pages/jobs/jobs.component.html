@@ -1,0 +1,70 @@
+<div class="container pt-3 pb-3">
+  <div class="row mt-4">
+    <div class="col-3 filter">
+      <div class="card border-color px-3">
+        <div class="card-body">
+          <h6>All Filter</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 job">
+      <div class="row pb-3" *ngFor="let job of visibleJobs()">
+        <div class="col-12">
+          <div class="card border-0 jobCard" (click)="openJobDetails(job.jobId)">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-12">
+                      <h6 class="fw-bold" style="margin-bottom: 0;">{{job.jobName}}</h6>
+                      <a style="color: rgb(85, 84, 84);font-weight: 600;">{{job.companyName}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <img class="compo_logo" [src]="job.logoURL" alt="" *ngIf="hasValidExtension(job.logoURL)">
+                  <img class="compo_logo" src="assets/images/no-image.png" alt=""
+                    *ngIf="!hasValidExtension(job.logoURL)">
+                </div>
+              </div>
+              <div class="row mt-1 jobInfo">
+                <div class="col-3 pe-0">
+                  <i class="fa fa-suitcase me-1" aria-hidden="true"></i> {{job.experience}}
+                </div>
+                <div class="col-3 px-0">
+                  <i class="fa fa-inr me-1" aria-hidden="true"></i> {{job.package | uppercase}}
+                </div>
+                <div class="col-3 ps-0">
+                  <i class="fa fa-map-marker me-1" aria-hidden="true"></i> {{job.location}}
+                </div>
+              </div>
+              <div class="row pt-2 jobInfo">
+                <div class="col-12">
+                  <i class="fa fa-file-text-o me-1" aria-hidden="true"></i> <span class="text-muted"> {{job.jobName |
+                    slice: 0-50}} ...</span>
+                </div>
+              </div>
+              <div class="row pt-2">
+                <div class="col-6">
+                  <small style="font-size: 11px;color: rgb(121, 119, 119);">Few Hours Ago</small>
+                </div>
+                <div class="col-6 text-end">
+                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p-paginator [rows]="rows" [totalRecords]="activeJobListingArr.length" [rowsPerPageOptions]="[10, 20, 30]"
+        (onPageChange)="onPageChange($event)"></p-paginator>
+    </div>
+    <div class="col-3 filter">
+      <div class="card border-color">
+        <div class="card-body">
+          <h6>Top Companies Hiring</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

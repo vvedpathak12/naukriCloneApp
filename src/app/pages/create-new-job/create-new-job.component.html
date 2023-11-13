@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card border-0 rounded-4 registerFormCard">
+        <div class="card-body p-5">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6">
+              <h5 class="fw-bold mb-4">Create New Job Post</h5>
+            </div>
+          </div>
+          <form #jobForm="ngForm">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Job Title</label>
+                <input type="text" pInputText class="form-control" name="JobName" #JobName="ngModel"
+                  [(ngModel)]="jobObj.JobName" placeholder="Please Enter Job Title" required>
+                <div class="errorMessage" *ngIf="JobName.touched || JobName.dirty">
+                  <span *ngIf="JobName.errors?.['required']">Job Title is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Job Category</label>
+                <select class="form-select" [(ngModel)]="jobObj.CategoryId" name="CategoryId" #CategoryId="ngModel"
+                  required>
+                  <option value="null" disabled>Select Job Category</option>
+                  <option [value]="category.jobCategoryId" *ngFor="let category of categoryArr">
+                    {{category.categoryName}}</option>
+                </select>
+                <div class="errorMessage" *ngIf="CategoryId.touched || CategoryId.dirty">
+                  <span *ngIf="CategoryId.errors?.['required']">Please Select Job Category</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Experience</label>
+                <select class="form-select" [(ngModel)]="jobObj.Experience" name="Experience" #Experience="ngModel"
+                  required>
+                  <option value="" disabled>Select Experience</option>
+                  <option value="Fresher">Fresher</option>
+                  <option value="Experienced">Experienced</option>
+                </select>
+                <div class="errorMessage" *ngIf="Experience.touched || Experience.dirty">
+                  <span *ngIf="Experience.errors?.['required']">This field is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Package</label>
+                <input type="text" pInputText class="form-control" name="Package" #Package="ngModel"
+                  [(ngModel)]="jobObj.Package" placeholder="Enter Package" required>
+                <div class="errorMessage" *ngIf="Package.touched || Package.dirty">
+                  <span *ngIf="Package.errors?.['required']">This field is required</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Location</label>
+                <input type="text" pInputText class="form-control" name="Location" #Location="ngModel"
+                  [(ngModel)]="jobObj.Location" placeholder="Please Enter Location" required>
+                <div class="errorMessage" *ngIf="Location.touched || Location.dirty">
+                  <span *ngIf="Location.errors?.['required']">Location is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Job Description</label>
+                <p-editor [(ngModel)]="jobObj.JobDescription" name="JobDescription" #JobDescription="ngModel"
+                  placeholder="Enter Job Description" required [style]="{'height':'120px'}"></p-editor>
+                <div class="errorMessage" *ngIf="JobDescription.touched || JobDescription.dirty">
+                  <span *ngIf="JobDescription.errors?.['required']">Job Description is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <button type="button" class="btn btn-success px-3 round-button" [disabled]="jobForm.invalid"
+                  (click)="createNewJob()">Create Job <span *ngIf="isApiCallInProgress"
+                    class="spinner-border spinner-border-sm ms-1"></span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+.static-list img {
+  width: 144px;
+  height: 144px;
+}
+
+ul li {
+  font-size: 14px;
+  list-style: none;
+  color: #474D6A;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+ul li::before {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  background: #47B749;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  padding: 3px;
+  margin-right: 5px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+input, textarea, .form-select{
+  border-color: #dcdee9;
+  padding: 9px;
+  border-radius: 16px
+}
+
+input::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2 !important;
+}
+
+select{
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2;
+}
+
+select option{
+  font-size: 14px;
+  color: rgb(65, 64, 64) !important;
+}
+
+textarea::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2;
+}
+
+.registerFormCard {
+  box-shadow: 0px 6px 12px rgba(30, 10, 58, 0.04);
+}
+
+.p-button {
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+}
+
+.p-buttonSelected{
+  background-color: #47B749;
+  color: #ffff;
+}

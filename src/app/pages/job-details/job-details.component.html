@@ -1,0 +1,93 @@
+<div class="container pt-5 ">
+  <div class="row mt-4 mb-3">
+    <div class="col-1 d-none d-lg-block"></div>
+    <div class="col-12 col-md-8 col-lg-7 job">
+      <div class="row">
+        <div class="col-12">
+          <div class="card border-0 px-2 py-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-12">
+                      <h5 style="margin-bottom: 0;">{{jobListObj?.jobName | titlecase}}</h5>
+                      <a>{{jobListObj?.companyName}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <img class="compo_logo" [src]="jobListObj?.logoURL" alt=""
+                    *ngIf="hasValidExtension(jobListObj?.logoURL)">
+                  <img class="compo_logo" src="assets/images/no-image.png" alt=""
+                    *ngIf="!hasValidExtension(jobListObj?.logoURL)">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12" style="color: #494d56; font-size: 14px;">
+                  <i class="fa fa-suitcase pe-1" aria-hidden="true"></i> {{jobListObj?.experience}}
+                  <i class="fa fa-inr pe-1 ms-4" aria-hidden="true"></i> {{jobListObj?.package | uppercase}}
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col-12" style="color: #494d56; font-size: 14px;">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i> {{jobListObj?.location | titlecase}}
+                </div>
+              </div>
+              <hr style="color: #a8aaaf;">
+              <div class="row mt-1">
+                <div class="col-8 pt-2" style="color: #494d56; font-size: 14px;">
+                  <span class="me-3">Posted: <small>Few Hours Ago</small></span>
+                  <span class="me-3">Openings: <small>5</small></span>
+                  <span>Applicants: <small>123</small></span>
+                </div>
+                <div class="col-4 text-end" style="color: #494d56; font-size: 14px;">
+                  <button class="btn border-primary round-button text-primary px-4 me-2" style="font-weight: 500;"
+                    *ngIf="isLoggedIn">Save</button>
+                  <button class="btn btn-primary round-button px-4" style="font-weight: 500;" *ngIf="isLoggedIn"
+                    (click)="applyToJob()">Apply <span *ngIf="isApiCallInProgress"
+                      class="spinner-border spinner-border-sm"></span></button>
+                  <button class="btn btn-primary round-button ms-2" (click)="loginToApply()" *ngIf="!isLoggedIn">Login To
+                    Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="col-12">
+          <div class="card border-0 px-2 pt-2">
+            <div class="card-body">
+              <h5>Job description</h5>
+              <div class="p-2">
+                <p class="mb-0" [innerHTML]="jobListObj?.jobDescription"></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-3 filter mt-3 mt-md-0">
+      <div class="row">
+        <div class="col-12">
+          <div class="card border-color">
+            <div class="card-body">
+              <h6 class="text-center">Reviews</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="col-12">
+          <div class="card border-color">
+            <div class="card-body">
+              <h6 class="text-center">Salary Insights</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1 d-none d-lg-block"></div>
+  </div>
+</div>

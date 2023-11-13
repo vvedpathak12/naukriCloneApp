@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row pt-3 pb-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-5 pe-0 d-none d-md-block">
+      <div class="card border-0 ps-4 pt-4 mt-5" style="border-color: 1px #f0efef;">
+        <div class="card-body infoImg">
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <h5 class="mb-4 ms-4">New to Naukri?</h5>
+              <ul class="ps-3">
+                <li>One click apply using naukri profile.</li>
+                <li>Get relevant job recommendations.</li>
+                <li>Showcase profile to top companies and consultants.</li>
+                <li>Know application status on applied jobs</li>
+              </ul>
+              <button class="btn regBtn" (click)="register()">Register for free</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-12 col-md-5 ps-0">
+      <div class="card border-0 loginFormCard">
+        <div class="card-body">
+          <form #loginForm="ngForm">
+            <div class="row mb-4">
+              <h5 class="fw-bold mb-4">Login</h5>
+              <span class="errorMessage">{{loginWrongCredentials}}</span>
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Email ID / Username</label>
+                <input type="text" pInputText class="form-control" name="userName" #userName="ngModel"
+                  [(ngModel)]="loginObj.userName" placeholder="Enter Email ID / Username" required>
+                <div class="errorMessage" *ngIf="userName.touched || userName.dirty">
+                  <span *ngIf="userName.errors?.['required']">Email ID/Username cannot be left blank</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Password</label>
+                <input type="text" pInputText class="form-control" name="password" #password="ngModel"
+                  [(ngModel)]="loginObj.password" placeholder="Enter Password" required>
+                <div class="errorMessage" *ngIf="password.touched || password.dirty">
+                  <span *ngIf="password.errors?.['required']">Password cannot be left blank</span>
+                </div>
+                <a class="float-end">Forgot Password?</a>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-md-12">
+                <button class="login-button mt-3" (click)="onLogin(loginForm)">
+                  <ng-container *ngIf="!isApiCallInProgress; else loggingIn">Login</ng-container>
+                  <ng-template #loggingIn>
+                    Logging In <span class="spinner-border spinner-border-sm ms-1"></span>
+                  </ng-template>
+                </button>
+                <p class="text-center mt-2 OTP">Use OTP to Login</p>
+                <div class="horizontal-line">
+                  <span>Or</span>
+                </div>
+                <div class="google-signin">
+                  <div class="google-logo">
+                    <img src="assets/images/google-logo.png" alt="Google Logo">
+                  </div>
+                  <button class="signin-button">Sign in with Google</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
