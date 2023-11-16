@@ -25,14 +25,17 @@
             routerLink="/job-listing">Job Listing</a>
         </li>
       </ul>
-      <form class="d-flex" *ngIf="!isLoggedIn">
-        <button class="btn loginBtn me-2" (click)="onLogin()">Login</button>
-        <button class="btn round-button text-white fw-bold" style="background-color: #f05537;"
+      <form class="d-flex userLogin" *ngIf="!isLoggedIn">
+        <button class="btn loginBtn me-2" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          (click)="onLogin()">Login</button>
+        <button class="btn round-button text-white fw-bold" data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show" style="background-color: #f05537;"
           (click)="onRegister()">Register</button>
       </form>
-      <form class="d-flex" *ngIf="isLoggedIn">
+      <form class="d-flex userInfo" *ngIf="isLoggedIn">
         <button class="btn userName me-2">{{userInfo.userName}}</button>
-        <button class="btn text-white fw-bold" style="background-color: #d82b2b;" (click)="onLogOut()">LogOut</button>
+        <button class="btn text-white fw-bold" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+          style="background-color: #d82b2b;" (click)="onLogOut()">LogOut</button>
       </form>
     </div>
   </div>
