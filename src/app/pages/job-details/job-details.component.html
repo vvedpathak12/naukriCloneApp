@@ -41,12 +41,22 @@
                   <span>Applicants: <small>123</small></span>
                 </div>
                 <div class="col-4 text-end" style="color: #494d56; font-size: 14px;">
-                  <button class="btn border-primary round-button text-primary px-4 me-2" style="font-weight: 500;"
-                    *ngIf="isLoggedIn">Save</button>
-                  <button class="btn btn-primary round-button px-4" style="font-weight: 500;" *ngIf="isLoggedIn"
-                    (click)="applyToJob()">Apply <span *ngIf="isApiCallInProgress"
-                      class="spinner-border spinner-border-sm"></span></button>
-                  <button class="btn btn-primary round-button ms-2" (click)="loginToApply()" *ngIf="!isLoggedIn">Login To
+                  <div class="d-md-none mt-3" style="white-space: nowrap;">
+                    <i class="fa fa-bookmark me-2" style="color: orangered;cursor: pointer;" *ngIf="isLoggedIn"></i>
+                    <button class="btn btn-primary round-button px-4" style="font-weight: 500;" *ngIf="isLoggedIn"
+                      (click)="applyToJob()">Apply <span *ngIf="isApiCallInProgress"
+                        class="spinner-border spinner-border-sm"></span></button>
+                  </div>
+                  <div class="d-none d-md-block">
+                    <button class="btn border-primary round-button text-primary px-4 me-2" style="font-weight: 500;"
+                      *ngIf="isLoggedIn">Save</button>
+                    <button class="btn btn-primary round-button px-4" style="font-weight: 500;" *ngIf="isLoggedIn"
+                      (click)="applyToJob()">Apply <span *ngIf="isApiCallInProgress"
+                        class="spinner-border spinner-border-sm"></span></button>
+                  </div>
+                  <button class="btn btn-primary round-button ms-2 loginToApply" (click)="loginToApply()"
+                    *ngIf="!isLoggedIn">Login
+                    To
                     Apply</button>
                 </div>
               </div>

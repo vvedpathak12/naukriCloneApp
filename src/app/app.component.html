@@ -10,16 +10,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item ms-4 me-3">
-          <a class="nav-link active" aria-current="page" routerLink="/jobs">Jobs</a>
+          <a class="nav-link active" aria-current="page" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show" routerLink="/jobs">Jobs</a>
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link" href="#">Companies</a>
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Companies</a>
         </li>
         <li class="nav-item me-3" *ngIf="userInfo.userRole == 'Employer' && isLoggedIn">
-          <a class="nav-link" routerLink="/new-job">Create New Job</a>
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+            routerLink="/new-job">Create New Job</a>
         </li>
         <li class="nav-item me-3" *ngIf="userInfo.userRole == 'Employer' && isLoggedIn">
-          <a class="nav-link" routerLink="/job-listing">Job Listing</a>
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+            routerLink="/job-listing">Job Listing</a>
         </li>
       </ul>
       <form class="d-flex" *ngIf="!isLoggedIn">
@@ -42,4 +45,4 @@
 <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle text-warning"
   [breakpoints]="{'960px': '75vw', '640px': '90vw'}" [style]="{width: '30vw', height: '30w'}"></p-confirmDialog>
 
-  <app-loader></app-loader>
+<app-loader></app-loader>

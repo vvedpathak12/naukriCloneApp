@@ -52,7 +52,12 @@ export class AppComponent implements OnInit {
       accept: () => {
         localStorage.removeItem('jobLoginUser');
         this.job.setLoggedInStatus(false);
-        this.toastr.success('Logged Out Successfully');
+        if (this.userInfo.userRole == 'Employer') {
+          this.router.navigateByUrl('/login');
+          this.toastr.success('Logged Out Successfully');
+        } else {
+          this.toastr.success('Logged Out Successfully');
+        }
       }
     });
   }

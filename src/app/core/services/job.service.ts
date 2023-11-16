@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class JobService {
-  apiUrl: string = "http://freeapi.miniprojectideas.com/api/JobPortal/";
+  apiUrl: string = "https://freeapi.miniprojectideas.com/api/JobPortal/";
 
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.getInitialLoginStatus());
   isLoggedIn$ = this.isLoggedInSubject.asObservable();

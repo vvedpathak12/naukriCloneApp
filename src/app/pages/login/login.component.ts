@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   };
   isApiCallInProgress: boolean = false;
   loginWrongCredentials: string = '';
+  showPassword: boolean = false;
   subscription: Subscription[] = [];
 
   constructor(private router: Router, private job: JobService, private toastr: ToastrService) { }
@@ -60,6 +61,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.router.navigate(['/register']);
       this.job.showLoader.next(false);
     }, 500);
+  }
+
+  onEyeClick(){
+    this.showPassword = !this.showPassword;
   }
 
   ngOnDestroy(): void {

@@ -38,8 +38,12 @@
             <div class="row">
               <div class="col-md-12">
                 <label class="form-label fw-bold">Password</label>
-                <input type="text" pInputText class="form-control" name="password" #password="ngModel"
-                  [(ngModel)]="loginObj.password" placeholder="Enter Password" required>
+                <div class="password-input-container">
+                  <input [type]="showPassword? 'text':'password'" pInputText class="form-control" name="password"
+                    #password="ngModel" [(ngModel)]="loginObj.password" placeholder="Enter Password" required>
+                  <p class="password-eye" (click)="onEyeClick()" *ngIf="showPassword == false">Show</p>
+                  <p class="password-eye" (click)="onEyeClick()" *ngIf="showPassword == true">Hide</p>
+                </div>
                 <div class="errorMessage" *ngIf="password.touched || password.dirty">
                   <span *ngIf="password.errors?.['required']">Password cannot be left blank</span>
                 </div>

@@ -12,3 +12,12 @@ small {
 .border-color {
   border-color: rgb(228, 227, 227);
 }
+
+
+@media(max-width: 575.98px) {
+  .loginToApply {
+    font-size: 12px;
+    white-space: nowrap;
+    margin-top: 10px;
+  }
+}
