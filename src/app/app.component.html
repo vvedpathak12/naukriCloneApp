@@ -13,7 +13,7 @@
           <a class="nav-link active" aria-current="page" data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show" routerLink="/jobs">Jobs</a>
         </li>
-        <li class="nav-item me-3">
+        <li class="nav-item me-3" *ngIf="userInfo.userRole == 'Employer' && isLoggedIn">
           <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Companies</a>
         </li>
         <li class="nav-item me-3" *ngIf="userInfo.userRole == 'Employer' && isLoggedIn">

@@ -51,3 +51,19 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .nav-item {
+    text-align: center !important;
+  }
+
+  .userLogin {
+    display: flex;
+    justify-content: center !important;
+  }
+
+  .userInfo{
+    display: flex;
+    justify-content: center !important;
+  }
+}

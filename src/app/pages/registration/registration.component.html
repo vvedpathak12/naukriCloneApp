@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row pt-3 pb-5">
-    <div class="col-md-3">
+    <div class="col-md-3 d-none d-md-block">
       <div class="card" style="border-color: 1px #f0efef;">
         <div class="card-body">
           <div class="row">
@@ -23,14 +23,14 @@
         </div>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-12 col-sm-12 col-md-9">
       <div class="card border-0 rounded-4 registerFormCard">
-        <div class="card-body p-5">
+        <div class="card-body p-5 px-md-3 px-lg-3 px-xl-5">
           <div class="row">
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-12 col-md-5">
               <h5 class="fw-bold mb-4">Find a job & grow your career</h5>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 text-center">
+            <div class="col-md-7 d-none d-md-block">
               <span class="p-buttonset">
                 <button pButton pRipple type="button" class="p-button-outlined" label="Are you a Job Seeker?"
                   icon="pi pi-user" [ngClass]="isJobSeeker?'p-buttonSelected p-button-raised':''"
@@ -40,9 +40,17 @@
                   (click)="isJobSeeker = false"></button>
               </span>
             </div>
+            <div class="col-12 col-sm-12 d-md-none text-center">
+              <span class="p-buttonset">
+                <button pButton pRipple type="button" class="p-button-outlined" label="Job Seeker"
+                  [ngClass]="isJobSeeker?'p-buttonSelected p-button-raised':''" (click)="isJobSeeker = true"></button>
+                <button pButton type="button" class="p-button-outlined" label="Employer"
+                  [ngClass]="!isJobSeeker?'p-buttonSelected p-button-raised':''" (click)="isJobSeeker = false"></button>
+              </span>
+            </div>
           </div>
           <form #companyRegisterForm="ngForm" *ngIf="!isJobSeeker">
-            <div class="row mb-3">
+            <div class="row mt-3 mt-md-0 mb-3">
               <div class="col-md-6">
                 <label class="form-label fw-bold">Company Name</label>
                 <input type="text" pInputText class="form-control" name="Company" #Company="ngModel"
@@ -148,7 +156,7 @@
             </div>
           </form>
           <form #jobSeekerRegisterForm="ngForm" *ngIf="isJobSeeker">
-            <div class="row mb-3">
+            <div class="row mt-3 mt-md-0 mb-3">
               <div class="col-md-6">
                 <label class="form-label fw-bold">Full Name</label>
                 <input type="text" pInputText class="form-control" name="fullName" #fullName="ngModel"

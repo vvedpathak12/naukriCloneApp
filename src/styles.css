@@ -219,3 +219,7 @@ select {
 .p-datatable .p-sortable-column ::after {
   color: #fff !important;
 }
+
+.button-cell{
+  white-space: nowrap !important;
+}
