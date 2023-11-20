@@ -1,3 +1,7 @@
+.main-content {
+  margin-top: 3.5rem;
+}
+
 .p-button.p-button-sm {
   font-size: 0.875rem !important;
   padding: 0px 20px 0px 20px !important;
@@ -46,7 +50,7 @@
     justify-content: center;
   }
 
-  .userInfo{
+  .userInfo {
     display: flex;
     justify-content: center;
   }
@@ -62,7 +66,7 @@
     justify-content: center !important;
   }
 
-  .userInfo{
+  .userInfo {
     display: flex;
     justify-content: center !important;
   }
