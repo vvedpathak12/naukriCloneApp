@@ -47,7 +47,8 @@
                 <div class="errorMessage" *ngIf="password.touched || password.dirty">
                   <span *ngIf="password.errors?.['required']">Password cannot be left blank</span>
                 </div>
-                <a class="float-end">Forgot Password?</a>
+                <a class="float-start hand" (click)="register()">Register for free</a>
+                <a class="float-end hand">Forgot Password?</a>
               </div>
             </div>
             <div class="row mt-2">
