@@ -1,0 +1,51 @@
+input {
+  border-color: #dcdee9;
+  padding: 10px;
+  border-radius: 16px
+}
+
+input::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2 !important;
+  padding: 15px;
+}
+
+.form-select {
+  border-color: #dcdee9;
+  padding: 10px;
+  border-radius: 16px
+}
+
+select {
+  font-size: 14px;
+  font-weight: 500;
+  color: #979EC2;
+}
+
+select option {
+  font-size: 14px;
+  color: rgb(65, 64, 64) !important;
+}
+
+.searchBtn {
+  padding: 6px 20px;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 26px;
+  background: #457eff;
+  box-shadow: 0 5.07692px 12.6923px rgb(69 126 255 / 10%);
+  border-radius: 100px !important;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+/* Responsive css */
+
+@media(max-width: 575.98px) {
+  #trendHead {
+    padding: 10px;
+    margin-bottom: 16px;
+  }
+}
