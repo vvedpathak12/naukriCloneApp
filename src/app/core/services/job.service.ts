@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JobService {
-  apiUrl: string = "https://freeapi.miniprojectideas.com/api/JobPortal/";
+  apiUrl: string = environment.apiEndPoint;
 
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.getInitialLoginStatus());
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
